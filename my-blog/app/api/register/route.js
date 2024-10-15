@@ -25,7 +25,7 @@ export async function POST(request) {
     // 비밀번호 암호화
     const hashedPassword = await bcrypt.hash(passwd, 10);
 
-    let img_url = "default-profile.png"; // 기본 이미지 경로
+    let img_url = "/uploads/default-profile.png"; // 기본 이미지 경로
 
     if (profile && profile instanceof Blob) {
       const bytes = await profile.arrayBuffer();
