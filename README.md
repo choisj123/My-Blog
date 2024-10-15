@@ -25,7 +25,7 @@
 <img width="1299" alt="image" src="https://github.com/user-attachments/assets/a5d2fa7c-b508-4511-b4cf-1b915291c161">
 
 - JWT 토큰을 이용한 인증을 사용하며, 로그인 정보는 localStorage에 저장됩니다.
-- 회원가입 시 프로필 사진을 등록할 수 있습니다.
+- 회원가입 시 프로필 사진을 등록할 수 있습니다. 이미지 등록 안할 시 기본 이미지가 첨부됩니다.
 
 
 ### 3. **글 목록 보기**
