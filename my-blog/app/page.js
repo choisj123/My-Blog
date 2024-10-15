@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
 import Link from "next/link";
+
+const prisma = new PrismaClient();
 
 export default async function Home() {
   const latestPosts = await prisma.post.findMany({
