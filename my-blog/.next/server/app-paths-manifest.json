@@ -1,0 +1,11 @@
+{
+  "/board/page": "app/board/page.js",
+  "/post/[id]/page": "app/post/[id]/page.js",
+  "/mypage/page": "app/mypage/page.js",
+  "/page": "app/page.js",
+  "/login/page": "app/login/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/post/[id]/route": "app/api/post/[id]/route.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/board/route": "app/api/board/route.js"
+}
