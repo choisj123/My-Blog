@@ -28,7 +28,7 @@ model Post {
   content   String
   create_dt DateTime  @default(now())
   update_dt DateTime?
-  comments  Comment[]
+  comments  Comment[] @relation("PostToComment")
   user      User      @relation(fields: [user_no], references: [user_no])
 }
 
@@ -39,6 +39,6 @@ model Comment {
   content    String
   create_dt  DateTime  @default(now())
   update_dt  DateTime?
-  post       Post      @relation(fields: [post_no], references: [post_no])
+  post       Post      @relation("PostToComment", fields: [post_no], references: [post_no], onDelete: Cascade)
   user       User      @relation(fields: [user_no], references: [user_no])
 }

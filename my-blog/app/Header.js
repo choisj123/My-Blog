@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Header() {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const router = useRouter();
 
   const Logout = async () => {

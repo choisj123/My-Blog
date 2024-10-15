@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { getSession } from "next-auth/react";
 
 export default function Login() {
   const [id, setId] = useState("");
@@ -18,7 +19,12 @@ export default function Login() {
         redirect: false,
       });
 
-      if (result?.error) {
+      if (!result?.error) {
+        const currentSession = await getSession();
+        alert("로그인 성공!");
+        router.push("/");
+        router.refresh();
+      } else {
         switch (result.error) {
           case "CredentialsSignin":
             alert("아이디 또는 비밀번호가 일치하지 않습니다.");
@@ -32,10 +38,6 @@ export default function Login() {
           default:
             alert("로그인 중 오류가 발생했습니다.");
         }
-      } else {
-        alert("로그인 성공!");
-        router.push("/");
-        router.refresh();
       }
     } catch (error) {
       console.error("로그인 실패:", error);
